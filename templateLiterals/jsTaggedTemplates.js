@@ -16,7 +16,7 @@ function uploadToDB(){
   console.log('Uploading to DB.');
 }
 
-axios.get('https://www.cryptocompare.com/api/data/coinlist/')
+axios.get('https://min-api.cryptocompare.com/data/all/coinlist/')
   .then(function (response) {
     // //////////////////
     const getCoins = ``; //Finish this line. it needs 1. tags 2.ajax data, and 3. callback to uploadToDB()
@@ -24,7 +24,7 @@ axios.get('https://www.cryptocompare.com/api/data/coinlist/')
 
     document.querySelector('#add-button').addEventListener('click', function(){
       let coin = document.querySelector('#coin').value.toUpperCase();
-      let radios = document.getElementsByName('interest');
+      let radios = document.getElementsByName('desire');
       // we cant map, because this is a nodelist, not an array. Good old for loop.
       let domEl;
       for(let i = 0; i < radios.length; i++){
